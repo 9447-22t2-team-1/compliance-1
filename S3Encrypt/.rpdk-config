@@ -3,8 +3,8 @@
     "typeName": "Sahara::S3BucketEncrypt::Hook",
     "language": "python36",
     "runtime": "python3.6",
-    "entrypoint": "s3bucketencrypt_hook.handlers.hook",
-    "testEntrypoint": "s3bucketencrypt_hook.handlers.test_entrypoint",
+    "entrypoint": "hook.handlers.hook",
+    "testEntrypoint": "hook.handlers.test_entrypoint",
     "settings": {
         "version": false,
         "subparser_name": null,
