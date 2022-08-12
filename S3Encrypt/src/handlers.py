@@ -54,7 +54,7 @@ def _validate_s3_bucket_encryption(bucket: MutableMapping[str, Any], required_en
                                 message = f"Successfully invoked PreCreateHookHandler for AWS::S3::Bucket with name: {bucket_name}"
                         else:
                             status = OperationStatus.FAILED
-                            message = f"SSE Encryption Algorithm is incorrect for bucket with name: {bucket_name}"
+                            message = f"Violation Control: ISM-0476; SSE Encryption Algorithm is incorrect for bucket with name: {bucket_name}"
                     else:
                         status = OperationStatus.FAILED
                         message = f"Bucket key not enabled for bucket with name: {bucket_name}"
@@ -63,10 +63,10 @@ def _validate_s3_bucket_encryption(bucket: MutableMapping[str, Any], required_en
                         break
             else:
                 status = OperationStatus.FAILED
-                message = f"No SSE Encryption configurations for bucket with name: {bucket_name}"
+                message = f"Violation: Control: ISM-1781;No SSE Encryption configurations for bucket with name: {bucket_name}"
         else:
             status = OperationStatus.FAILED
-            message = f"Bucket Encryption not enabled for bucket with name: {bucket_name}"
+            message = f"Violation: Control: ISM-1781;Bucket Encryption not enabled for bucket with name: {bucket_name}"
     else:
         status = OperationStatus.FAILED
         message = "Resource properties for S3 Bucket target model are empty"
