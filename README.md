@@ -1,5 +1,7 @@
 S3 ISM Controls
 
+Controls
+
 Control: ISM-1781;
 All data communicated over network infrastructure is encrypted.
 
@@ -18,9 +20,25 @@ Control: ISM-1684; Revision: 0; Updated: Sep-21; Applicability: All; Essential E
 Multi-factor authentication event logs are centrally stored and protected from unauthorised modification and deletion,
 monitored for signs of compromise, and actioned when cyber security events are detected.
 
+Setup
+1. Install CLI:  pip3 install cloudformation-cli cloudformation-cli-python-plugin
+2. Configure AWS CLI with your credentials.
+$ aws configure
+
+3. Permissions needed:
+      -register-type
+      -list-types
+      -deregister-type
+      -set-type-configuration
+
+4. generate hook :  cfn generate
+
+5. 
+
 Future Automation 
 - Requires user to configure AWS 
       i.e. AWS Secret Key,  
 - User ARN
 
 Extra: https://github.com/aws-cloudformation/aws-cloudformation-samples
+
