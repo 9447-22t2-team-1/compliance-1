@@ -17,7 +17,7 @@ from .models import HookHandlerRequest, TypeConfigurationModel
 
 # Use this logger to forward log messages to CloudWatch Logs.
 LOG = logging.getLogger(__name__)
-TYPE_NAME = "AWSSamples::S3BucketEncrypt::Hook"
+TYPE_NAME = "Sahara::S3::CHook1"
 
 LOG.setLevel(logging.INFO)
 
