@@ -22,7 +22,7 @@ monitored for signs of compromise, and actioned when cyber security events are d
 
 Setup
 1. Install CLI:  pip3 install cloudformation-cli cloudformation-cli-python-plugin
-2. Configure AWS CLI with your credentials.
+2. Configure AWS CLI with your credentials:
 $ aws configure
 
 3. Permissions needed:
@@ -31,9 +31,22 @@ $ aws configure
       -deregister-type
       -set-type-configuration
 
-4. generate hook :  cfn generate
+4. Generate the hook. The cloudformation-cli will create empty handler functions. Each handler created corresponds to a hook invocation point. :  $cfn generate
 
-5. 
+5. Copy the code from repo in handler.py which is located in the src/ directory.
+
+6. Register the hook: $ cfn submit –set-default
+
+7. Check if you can see your hook in the list after you run the command below:
+$ aws cloudformation list-types
+
+8.  Copy the hook arn from the response.
+
+9.  Activate hooks from the public registry:
+aws cloudformation --region ap-southeast-2 set-type-configuration \
+  --configuration "{\"CloudFormationConfiguration\":{\"HookConfiguration\":{\"TargetStacks\":\"ALL\",\"FailureMode\":\"FAIL\",\"Properties\":{}}}}" \
+  --type-arn $Hook_ARN
+
 
 Future Automation 
 - Requires user to configure AWS 
