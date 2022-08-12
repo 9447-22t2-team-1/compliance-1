@@ -19,7 +19,7 @@ REQUIRED_CONDITION_VALUE = "true"
 
 # Use this logger to forward log messages to CloudWatch Logs.
 LOG = logging.getLogger(__name__)
-TYPE_NAME = "AWSSamples::IamPoliciesRequireMfa::Hook"
+TYPE_NAME = "Sahara::Iam::Hook"
 
 LOG.setLevel(logging.INFO)
 
