@@ -49,10 +49,10 @@ def _validate_iam_statement_encryption(policy_name: str, statement: dict) -> Pro
                     message = f"{REQUIRED_CONDITION_KEY} value ({condition_value}) is incorrect for a statement in policy with name: {policy_name}"
             else:
                 status = OperationStatus.FAILED
-                message = f"{REQUIRED_CONDITION_KEY} condtion key not present for a statement in policy with name: {policy_name}"
+                message = f"Violation Control: ISM-1505 {REQUIRED_CONDITION_KEY} condtion key not present for a statement in policy with name: {policy_name}"
         else:
             status = OperationStatus.FAILED
-            message = f"Expected condition type {REQUIRED_CONDITION_TYPE} not found for a statement in policy with name: {policy_name}"
+            message = f" Control: ISM-1505 Expected condition type {REQUIRED_CONDITION_TYPE} not found for a statement in policy with name: {policy_name}"
 
     else:
         status = OperationStatus.FAILED
